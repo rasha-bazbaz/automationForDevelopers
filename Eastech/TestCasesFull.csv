@@ -1,0 +1,34 @@
+type,path,body,expected status code 
+GET,/posts,,200
+GET,/posts/1,,200
+DELETE,/posts/1,,200
+GET,/posts/1/comments,,200
+GET,/posts/1000/comments,,404
+GET,/posts/200,,404
+DELETE,/posts/2000,,404
+GET,/comments,,200
+GET,/comments/1,,200
+DELETE,/comments/1,,200
+GET,/comments?postId=1,,200
+GET,/comments?postId=1000,,404
+GET,/comments/1000,,404
+DELETE,/comments/1000,,404
+GET,/photos,,200
+GET,/photos/1,,200
+DELETE,/photos/1,,200
+GET,/photos/10000,,404
+DELETE,/photos/10000,,404
+GET,/albums,,200
+GET,/albums/1,,200
+DELETE,/albums/1,,200
+GET,/albums/1000,,404
+DELETE,/albums/1000,,404
+GET,/users,,200
+GET,/users/1,,200
+DELETE,/users/1,,200
+GET,/users/20,,404
+DELETE,/users/20,,404
+POST,/posts,"{""userId"": 1,""title"": ""test title"",""body"": ""test body""}",201
+POST,/posts,"{""userId"": 10000,""title"": ""test title"",""body"": ""test body""}",500
+PUT,/posts/1,"{""userId"": 1,""title"": ""test title"",""body"": ""test body""}",200
+PUT,/posts/1000,"{""userId"": 1,""title"": ""test title"",""body"": ""test body""}",500
