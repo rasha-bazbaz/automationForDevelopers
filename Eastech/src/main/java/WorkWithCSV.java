@@ -31,7 +31,7 @@ public class WorkWithCSV {
 			int expStatus = Integer.parseInt(data.get(i)[3]);
 			switch (type) {
 			case "GET": {
-				HttpResponse resp = RequestsCall.GetRequest(url);
+				HttpResponse<String> resp = RequestsCall.GetRequest(url);
 				if (resp.statusCode() == expStatus) {
 					System.out.println("pass");
 				}else {

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="First Suite" verbose="1">
+  <test name="First Test">
+    <classes>
+       <class name="FirstTestNgClass"/>
+    </classes>
+  </test>
+
+  <test name="First API Test">
+    <classes>
+      <class name="FirstApiTest"/>
+    </classes>
+  </test>
+</suite>
