@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 
@@ -34,5 +35,26 @@ public class ReqValidation {
 				System.out.println(response.statusCode() +" != "+ expStatus);
 			}
 		}
+	}
+	
+	public static HttpResponse<String> runReq(String type, String path, String body) throws IOException, InterruptedException {
+		String reqUrl = "https://jsonplaceholder.typicode.com" + path;
+		HttpResponse<String> response = null;
+		switch (type.toLowerCase()){
+		case "get": 
+			response = RequestsCall.GetRequest(reqUrl);
+			break;
+		case "put": 
+			response = RequestsCall.PutRequest(reqUrl, body);
+			break;
+		case "post": 
+			response = RequestsCall.PostRequest(reqUrl, body);
+			break;
+		case "delete": 
+			response = RequestsCall.DeleteRequest(reqUrl);
+			break;
+		}
+		return response;
+		
 	}
 }
