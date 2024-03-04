@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="First Suite" verbose="1">
+		  <parameter name="path"  value="/posts"/>
+
   <test name="Test GET">
 	  <parameter name="type"  value="GET"/>
-	  <parameter name="path"  value="/posts"/>
 	  <parameter name="body"  value=""/>
 	  <parameter name="expStatus"  value="200"/>
 	  <classes>
@@ -13,7 +14,6 @@
 
   <test name="Test Post">
 	  <parameter name="type"  value="Post"/>
-	  <parameter name="path"  value="/posts"/>
 	  <parameter name="body"  value="{&quot;userId&quot;: 1,&quot;title&quot;: &quot;test title&quot;,&quot;body&quot;: &quot;test body&quot;}"/>
 	  <parameter name="expStatus"  value="201"/>
     <classes>
