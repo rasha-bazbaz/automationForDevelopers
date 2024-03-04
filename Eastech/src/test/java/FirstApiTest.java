@@ -9,7 +9,7 @@ public class FirstApiTest {
 	@Test
 	public void testGet() throws IOException, InterruptedException {
 		HttpResponse<String> resp = RequestsCall.GetRequest("https://jsonplaceholder.typicode.com/posts");
-	
+		
 		
 		assertEquals(resp.statusCode(), 200);
 	}

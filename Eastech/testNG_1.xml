@@ -4,12 +4,9 @@
   <test name="First Test">
     <classes>
        <class name="FirstTestNgClass"/>
+       <class name="FirstApiTest"/>
+
     </classes>
   </test>
 
-  <test name="First API Test">
-    <classes>
-      <class name="FirstApiTest"/>
-    </classes>
-  </test>
 </suite>
